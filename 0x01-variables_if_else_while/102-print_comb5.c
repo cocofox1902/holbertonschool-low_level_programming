@@ -10,44 +10,27 @@
 
 int main(void)
 {
-	int a, b, c, d;
+	int a, b;
 
-	a = b = c = 48;
-	d = 49;
-	while (a < 58)
+	for (a = 0; a <= 98; a++)
 	{
-		while (b < 58)
+		for (b = a + 1; b <= 99; b++)
 		{
-			while (c < 58)
-			{
-				while (d < 58)
-				{
-					putchar(a);
-					putchar(b);
-					putchar(32);
-					putchar(c);
-					putchar(d);
-					if (a == 57 && b == 56 && c == 57 && d == 57)
-					{
+			putchar((a / 10) + '0');
+			putchar((a % 10) + '0');
+			putchar(' ');
+			putchar((b / 10) + '0');
+			putchar((b % 10) + '0');
 
-					}
-					else
-					{
-						putchar(',');
-						putchar(' ');
-					}
-					d++;
-				}
-				d = 48;
-				c++;
-			}
-			c = a;
-			d = b + 2;
-			b++;
+			if (a == 98 && b == 99)
+				continue;
+
+			putchar(',');
+			putchar(' ');
 		}
-		b = 48;
-		a++;
 	}
+
 	putchar('\n');
+
 	return (0);
 }
