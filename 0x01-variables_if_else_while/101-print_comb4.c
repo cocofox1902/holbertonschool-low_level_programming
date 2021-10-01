@@ -10,41 +10,29 @@
 
 int main(void)
 {
-	int i = 48;
-	int c = 48;
-    int u = 48;
-	int cpt = 0;
+	int a;
+	int b;
+	int c;
 
-	while (u < 58)
+	for (a = 48; a < 58; a++)
 	{
-		while (i < 58)
+		for (b = 49; b < 58; b++)
 		{
-			while (c < 58)
+			for (c = 50; c < 58; c++)
 			{
-				if (u != c)
+				if (c > b && b > a)
 				{
-					if (c != i)
+					putchar(a);
+					putchar(b);
+					putchar(c);
+					if (a != 55 || b != 56)
 					{
-						putchar(i);
-						putchar(c);
-						putchar(u);
-						if (u < 56)
-						{
-							putchar(',');
-							putchar(' ');
-						}
+						putchar(',');
+						putchar(' ');
 					}
-					c++;
-				}
-				else
-				{
-					u++;
 				}
 			}
 		}
-		cpt = cpt + 1;
-		c = 48 + cpt;
-		u++;
 	}
 	putchar('\n');
 	return (0);
