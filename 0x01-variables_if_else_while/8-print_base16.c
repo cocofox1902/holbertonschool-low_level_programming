@@ -12,18 +12,18 @@
 int main(void)
 {
 	char n = 48;
-    char x = 97;
+	char x = 97;
 
 	while (n <= 57)
 	{
 		putchar(n);
 		n++;
 	}
-    while (x <= 102)
-    {
-        putchar(x);
-        x++;
-    }
+	while (x <= 102)
+	{
+		putchar(x);
+		x++;
+	}
 	putchar ('\n');
 	return (0);
 }
