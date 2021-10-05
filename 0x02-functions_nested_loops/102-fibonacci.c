@@ -32,7 +32,7 @@ int main(void)
 		}
 		if (i == 51)
 		{
-			printf('\n');
+			printf("\n");
 		}
 	}
 	return (0);
