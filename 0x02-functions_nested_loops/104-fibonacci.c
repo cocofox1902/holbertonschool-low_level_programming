@@ -8,42 +8,43 @@
 
 int main(void)
 {
-	unsigned long int a = 0;
-	unsigned long int b = 1;
-	unsigned long int c, m1a, m2a, m1b, m2b, ma, mb;
-	int i;
+	int count;
+	unsigned long fib1 = 0, fib2 = 1, sum;
+	unsigned long fib1_half1, fib1_half2, fib2_half1, fib2_half2;
+	unsigned long half1, half2;
 
-	for (i = 2; i < 92; i++)
+	for (count = 0; count < 92; count++)
 	{
+		sum = fib1 + fib2;
+		printf("%lu, ", sum);
 
-		c = a + b;
-		printf("%lu, ", c);
-		a = b;
-		b = c;
+		fib1 = fib2;
+		fib2 = sum;
 	}
-	m1a = a / 10000000000;
-	m1b = b / 10000000000;
-	m2a = a % 10000000000;
-	m2b = b % 10000000000;
 
-	for (i = 93; i < 99; i++)
+	fib1_half1 = fib1 / 10000000000;
+	fib2_half1 = fib2 / 10000000000;
+	fib1_half2 = fib1 % 10000000000;
+	fib2_half2 = fib2 % 10000000000;
+
+	for (count = 93; count < 99; count++)
 	{
-		ma = m1a + m1b;
-		mb = m2a + m2b;
-		if ((m2a + m2b) > 9999999999)
+		half1 = fib1_half1 + fib2_half1;
+		half2 = fib1_half2 + fib2_half2;
+		if (fib1_half2 + fib2_half2 > 9999999999)
 		{
-			ma += 1;
-			mb %= 10000000000;
+			half1 += 1;
+			half2 %= 10000000000;
 		}
-		printf("%lu%lu", ma, mb);
-		if (i != 98)
-		{
+
+		printf("%lu%lu", half1, half2);
+		if (count != 98)
 			printf(", ");
-		}
-		m1a = m1b;
-		m2a = m2b;
-		m1b = ma;
-		m2b = mb;
+
+		fib1_half1 = fib2_half1;
+		fib1_half2 = fib2_half2;
+		fib2_half1 = half1;
+		fib2_half2 = half2;
 	}
 	printf("\n");
 	return (0);
