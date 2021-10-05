@@ -25,7 +25,7 @@ int main(void)
 			a = b;
 			b = c;
 		}
-		printf("%d\n", c);
+		printf("%lu ,", c);
 	}
 	return (0);
 }
