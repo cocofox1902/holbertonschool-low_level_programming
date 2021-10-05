@@ -10,9 +10,9 @@ void print_alphabet_x10(void)
 	int X = 0;
 	char str[] = "abcdefghijklmnopqrstuvwxyz";
 
-	while (X != 11)
+	while (X != 10)
 	{
-		while (P != 27)
+		while (P != 26)
 		{
 			_putchar(str[P]);
 			P++;
