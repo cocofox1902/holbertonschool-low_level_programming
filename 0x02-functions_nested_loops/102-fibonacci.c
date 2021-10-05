@@ -13,7 +13,7 @@ int main(void)
 	long int c;
 	int i;
 
-	for (i = 1; i < 52; i++)
+	for (i = 2; i < 52; i++)
 	{
 		if (i <= 1)
 		{
