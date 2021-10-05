@@ -8,9 +8,9 @@
 
 int main(void)
 {
-	int a = 0;
-	int b = 1;
-	int c;
+	long int a = 0;
+	long int b = 1;
+	long int c;
 	int i;
 
 	for (i = 0; i < 50; i++)
