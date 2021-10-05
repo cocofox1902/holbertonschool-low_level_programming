@@ -11,12 +11,20 @@ int main(void)
 	int a = 0;
 	int b = 1;
 	int c;
-	int d = 0;
+	int i;
 
-	while (d < 50)
+	for (i = 0; i < 50; i++)
 	{
-		d = d + 1;
-		c = b + a;
+		if (i <= 1)
+		{
+			c = i;
+		}
+		else
+		{
+			c = a + b;
+			a = b;
+			b = c;
+		}
 		printf("%d\n", c);
 	}
 	return (0);
