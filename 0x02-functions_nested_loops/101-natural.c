@@ -8,16 +8,15 @@
 
 int main(void)
 {
-	int a = 0;
-	int b = 1;
-	int c;
-	int d = 0;
+	int i, b = 0;
 
-	while (d < 50)
+	for (i = 0; i < 1024; i++)
 	{
-		d = d + 1;
-		c = b + a;
-		printf("%d\n", c);
+		if ((i % 3) == 0 || (i % 5) == 0)
+			b += i;
 	}
+
+	printf("%d\n", b);
+
 	return (0);
 }
