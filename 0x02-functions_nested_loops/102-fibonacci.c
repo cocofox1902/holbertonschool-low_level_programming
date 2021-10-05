@@ -25,7 +25,10 @@ int main(void)
 			a = b;
 			b = c;
 		}
-		printf("%lu ,", c);
+		if (i != 50)
+		{
+			printf("%lu ,", c);
+		}
 	}
 	return (0);
 }
