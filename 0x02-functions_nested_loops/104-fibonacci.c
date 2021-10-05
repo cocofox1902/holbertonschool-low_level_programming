@@ -9,24 +9,22 @@
 int main(void)
 {
 	int count;
-	unsigned long a = 0, b = 1, sum;
+	unsigned long a = 0, b = 1, i;
 	unsigned long m1a, m1b, m2a, m2b;
 	unsigned long ma, mb;
 
 	for (count = 0; count < 92; count++)
 	{
-		sum = a + b;
-		printf("%lu, ", sum);
+		i = a + b;
+		printf("%lu, ", i);
 
 		a = b;
-		b = sum;
+		b = i;
 	}
-
 	m1a = a / 10000000000;
 	m2a = b / 10000000000;
 	m1b = a % 10000000000;
 	m2b = b % 10000000000;
-
 	for (count = 93; count < 99; count++)
 	{
 		ma = m1a + m2a;
@@ -36,7 +34,6 @@ int main(void)
 			ma += 1;
 			mb %= 10000000000;
 		}
-
 		printf("%lu%lu", ma, mb);
 		if (count != 98)
 		{
