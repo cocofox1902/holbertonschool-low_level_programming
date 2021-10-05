@@ -4,6 +4,8 @@
 /**
  * print_to_98 - print
  *
+ * @n: int
+ *
  * Return: print
  */
 
