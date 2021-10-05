@@ -13,7 +13,7 @@ int main(void)
 	long int c;
 	int i;
 
-	for (i = 0; i < 50; i++)
+	for (i = 1; i < 52; i++)
 	{
 		if (i <= 1)
 		{
@@ -26,7 +26,7 @@ int main(void)
 			b = c;
 		}
 		printf("%lu", c);
-		if (i != 49)
+		if (i != 51)
 		{
 			printf(" ,");
 		}
