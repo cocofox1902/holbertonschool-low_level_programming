@@ -1,11 +1,11 @@
 #include "main.h"
 
 /**
- * _abs - absolut
+ * print_last_digit - last number
  *
  * @n: variable
  *
- * Return: absolut
+ * Return: last number
  */
 
 int print_last_digit(int n)
