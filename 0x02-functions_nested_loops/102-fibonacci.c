@@ -30,6 +30,10 @@ int main(void)
 		{
 			printf(", ");
 		}
+		if (i == 51)
+		{
+			printf('\n');
+		}
 	}
 	return (0);
 }
