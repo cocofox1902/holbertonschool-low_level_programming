@@ -24,5 +24,5 @@ void print_number(int n)
 		print_number(a / 10);
 	}
 
-	_putchar(a % 10 + 48);
+	_putchar((a % 10) + 48);
 }
