@@ -20,6 +20,6 @@ int main(void)
 		}
 		pf++;
 	}
-	printf("%d", b);
+	printf("%lu", b);
 	return (0);
 }
