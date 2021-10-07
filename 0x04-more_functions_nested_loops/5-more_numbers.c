@@ -2,8 +2,6 @@
 
 /**
  * more_numbers - more numbers
- * @c: int
- * @a: int
  * Return: multipe
  */
 
