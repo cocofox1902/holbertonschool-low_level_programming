@@ -1,8 +1,7 @@
 #include "main.h"
 
 /**
- * print_triangle - print triangle
- * @size: int
+ * main - Main
  * Return: multipe
  */
 
