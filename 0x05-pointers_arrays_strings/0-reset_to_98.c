@@ -1,8 +1,8 @@
 #include "main.h"
 
 /**
- * main - check the code
- *
+ * reset_to_98 - points reset to 98
+ * @n: int
  * Return: Always 0.
  */
 
