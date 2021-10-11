@@ -9,6 +9,7 @@
 void puts_half(char *str)
 {
 	int max, divmax;
+
 	for (max = 0; str[max] != '\0'; max++)
 	{
 		continue;
@@ -16,7 +17,7 @@ void puts_half(char *str)
 	divmax = max / 2;
 	if (max % 2 != 0)
 	{
-		max = (max - 1) / 2;
+		divmax = (max - 1) / 2;
 	}
 	while (str[divmax] != '\0')
 	{
