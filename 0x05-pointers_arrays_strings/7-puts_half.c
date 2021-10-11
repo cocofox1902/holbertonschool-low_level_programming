@@ -15,10 +15,6 @@ void puts_half(char *str)
 		continue;
 	}
 	divmax = max / 2;
-	if (divmax % 2 != 0)
-	{
-		divmax = (max - 1) / 2;
-	}
 	while (str[divmax] != '\0')
 	{
 		_putchar(str[divmax]);
