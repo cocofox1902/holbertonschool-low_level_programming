@@ -14,10 +14,13 @@ void puts_half(char *str)
 	{
 		continue;
 	}
-	divmax = max / 2;
 	if (max % 2 != 0)
 	{
-		divmax = (divmax + 1) / 2;
+		divmax = (max + 1) / 2;
+	}
+	else
+	{
+		divmax = max / 2;
 	}
 	while (str[divmax] != '\0')
 	{
