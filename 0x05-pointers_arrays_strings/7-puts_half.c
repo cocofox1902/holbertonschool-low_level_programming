@@ -15,7 +15,7 @@ void puts_half(char *str)
 		continue;
 	}
 	divmax = max / 2;
-	if (max % 2 != 0)
+	if (divmax % 2 != 0)
 	{
 		divmax = (max - 1) / 2;
 	}
