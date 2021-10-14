@@ -10,15 +10,15 @@
 
 int main(void)
 {
-	int c, answer;
+	int b, answer;
 
 	srand(time(NULL));
-	for (c = 2772; c > '~';)
+	for (b = 2772; b > '~';)
 	{
 		answer = (rand() % '~');
 		printf("%c", answer);
-		c = c - answer;
+		b = b - answer;
 	}
-	printf("%c", c);
+	printf("%c", b);
 	return (0);
 }
