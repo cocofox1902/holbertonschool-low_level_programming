@@ -1,6 +1,7 @@
 #include <stdio.h>
+
 /**
- * main: Main
+ * main - Main
  * Return: return
  */
 
