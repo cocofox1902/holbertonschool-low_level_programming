@@ -2,9 +2,10 @@
 #include <stdio.h>
 
 /**
- * _strcmp - concatenates two strings
- * @dest: char string
- * @src: char string
+ * _strcmp - Main
+ * @s1: char string
+ * @s2: char string
+ * Return: return
  */
 
 int _strcmp(char *s1, char *s2)

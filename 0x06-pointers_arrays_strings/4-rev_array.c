@@ -2,9 +2,10 @@
 #include <stdio.h>
 
 /**
- * _strcat - concatenates two strings
- * @dest: char string
- * @src: char string
+ * reverse_array - Main
+ * @a: char string
+ * @n: char string
+ * Return: return
  */
 
 void reverse_array(int *a, int n)

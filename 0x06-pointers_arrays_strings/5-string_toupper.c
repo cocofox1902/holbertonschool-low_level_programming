@@ -2,9 +2,9 @@
 #include <stdio.h>
 
 /**
- * _strcat - concatenates two strings
- * @dest: char string
- * @src: char string
+ * string_toupper - Main
+ * @s: char string
+ * Return: return
  */
 
 char *string_toupper(char *s)

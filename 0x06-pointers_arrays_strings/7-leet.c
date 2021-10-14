@@ -3,7 +3,7 @@
 /**
  *leet - Main
  *@s: string
- *Return: returns
+ *Return: return
  */
 
 char *leet(char *s)

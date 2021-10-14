@@ -2,9 +2,11 @@
 #include <stdio.h>
 
 /**
- * _strncpy - concatenates two strings
+ * _strncpy - Main
  * @dest: char string
  * @src: char string
+ * @n: int
+ * Return: return
  */
 
 char *_strncpy(char *dest, char *src, int n)
