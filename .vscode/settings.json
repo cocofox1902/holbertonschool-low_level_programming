@@ -1,0 +1,8 @@
+{
+	"files.associations": {
+		"time.h": "c",
+		"main.h": "c",
+		"holberton.h": "c",
+		"limits": "c"
+	}
+}
