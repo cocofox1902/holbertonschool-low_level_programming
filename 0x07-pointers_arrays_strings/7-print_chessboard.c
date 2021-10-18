@@ -1,10 +1,9 @@
 #include "main.h"
 
 /**
- * _strstr - Write a function that locates a substring.
- * @haystack: char
- * @needle: char
- * Return: a pointer to the beginning of the located substring
+ * print_chessboard - Write a function that prints the chessboard.
+ * @a: char
+ * Return: chessboard
  */
 
 void print_chessboard(char (*a)[8])
