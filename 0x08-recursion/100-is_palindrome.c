@@ -5,7 +5,7 @@ int palindrome(char *s, int l, int a);
 int is_palindrome(char *s);
 
 /**
- * length_ - length of a string
+ * length - length of a string
  * @s: int
  * Return: length of a string
  */
