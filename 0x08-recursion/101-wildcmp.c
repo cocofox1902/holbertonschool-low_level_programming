@@ -63,7 +63,7 @@ int _char(int f, int g, char *s1, char *s2)
 /**
  * _wildcmp_preposition - Compare
  * @a: int
- * @j: int
+ * @b: int
  * @s1: str
  * @s2: str
  * Return: 0 or 1
