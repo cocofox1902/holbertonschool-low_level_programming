@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 /**
- * create_v - Write a function that creates an v of chars,
+ * create_array - Write a function that creates an v of chars,
  * and initializes it with a specific char.
  * @size: int
  * @c: str
