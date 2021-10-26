@@ -3,7 +3,7 @@
 #include <stdlib.h>
 
 /**
- * create_array - Write a function that creates an array of chars,
+ * create_v - Write a function that creates an v of chars,
  * and initializes it with a specific char.
  * @size: int
  * @c: str
@@ -12,8 +12,13 @@
 
 char *create_array(unsigned int size, char c)
 {
-	unsigned int s = 0;
 	char *v;
+	unsigned int j = 0;
+
+	if (size == 0)
+	{
+		return (NULL);
+	}
 
 	v = (char *)malloc(sizeof(char) * size);
 
@@ -21,13 +26,10 @@ char *create_array(unsigned int size, char c)
 	{
 		return (NULL);
 	}
-	else
-	{
-		for (s = 0; s < size; s++)
-		{
-			v[s] = c;
-		}
-	}
 
+	for (j = 0; j < size; j++)
+	{
+		*(v + j) = c;
+	}
 	return (v);
 }
