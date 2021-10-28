@@ -14,11 +14,9 @@ char *_memcpy(char *dest, char *src, unsigned int n);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size)
 {
 	void *p;
-	void *p1;
 
-	p1 = malloc(new_size);
 	if (ptr == NULL)
-		return (p1);
+		return (malloc(new_size));
 	if (new_size == old_size)
 		return (ptr);
 
