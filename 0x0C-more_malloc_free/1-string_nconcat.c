@@ -12,45 +12,32 @@ int _strlen(char *s);
  */
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *sFinal = NULL;
-	unsigned int length1, length2, totalLenght, i;
+	char *sEnd;
+	unsigned int l1, l2, i;
 
 	if (s1 == NULL)
-		length1 = 0;
+		l1 = 0;
 	else
-		length1 = _strlen(s1);
-
-	if (s2 == NULL)
-		length2 = 0;
-	else
-		length2 = _strlen(s2);
-
-	totalLenght = length2 + length1;
-	sFinal = (char *)malloc(sizeof(char) * totalLenght + 6);
-
-	if (sFinal == NULL)
-		return (NULL);
-
-	for (i = 0; i < length1; i++)
-		*(sFinal + i) = *(s1 + i);
-	for (i = 0; i < n; i++)
-		*(sFinal + length1 + i) = *(s2 + i);
-	*(sFinal + length1 + length2) = '\0';
-	return (sFinal);
-}
-
-/**
- * _strlen - Calculate the length of a string.
- * @s: Str
- * Return: length
- */
-
-int _strlen(char *s)
-{
-	int i;
-
-	for (i = 0; s[i] != '\0'; i++)
 	{
+		for (l1 = 0; *(s1 + l1); l1++)
+			;
 	}
-	return (i);
+	if (s2 == NULL)
+		l2 = 0;
+	else
+	{
+		for (l2 = 0; *(s2 + l2); l2++)
+			;
+	}
+	if (n < l2)
+		l2 = n;
+	sEnd = malloc(sizeof(char) * (l1 + l2 + 6));
+	if (sEnd == NULL)
+		return (NULL);
+	for (i = 0; i < l1; i++)
+		sEnd[i] = s1[i];
+	for (i = 0; i < l2; i++)
+		sEnd[l1 + i] = s2[i];
+	*(sEnd + l1 + l2) = '\0';
+	return (sEnd);
 }
