@@ -1,6 +1,12 @@
 #ifndef MAIN_H
 #define MAIN_H
 
+/**
+ * struct printer - define a printer
+ * @symbol: str
+ * @print: void
+ */
+
 #include <stdio.h>
 #include <stdarg.h>
 
