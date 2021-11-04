@@ -1,24 +1,27 @@
-#ifndef MAIN_H
-#define MAIN_H
+#ifndef VARIADIC_FUNCTIONS_H
+#define VARIADIC_FUNCTIONS_H
+#include <stdarg.h>
+#include <stdlib.h>
+#include <stdio.h>
 
 /**
- * struct printer - define a printer
- * @symbol: str
- * @print: void
+ * struct format_str - Format str
+ *
+ * @type: Type of the argu
+ * @f: Pointer to function to print argu
  */
-
-#include <stdio.h>
-#include <stdarg.h>
+typedef struct format_str
+{
+	char *type;
+	void (*f)(va_list);
+} format_str;
 
 int sum_them_all(const unsigned int n, ...);
-void print_numbers(const char *separator, const unsigned int n, ...);
-void print_strings(const char *separator, const unsigned int n, ...);
-typedef struct printer
-{
-	char *symbol;
-	void (*print)(va_list arg);
 
-} printer_t;
+void print_numbers(const char *separator, const unsigned int n, ...);
+
+void print_strings(const char *separator, const unsigned int n, ...);
+
 void print_all(const char *const format, ...);
 
-#endif /* MAIN_H */
+#endif
