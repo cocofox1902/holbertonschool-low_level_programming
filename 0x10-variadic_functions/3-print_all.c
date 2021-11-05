@@ -1,101 +1,101 @@
 #include "variadic_functions.h"
 
-void _char(va_list arg);
-void _string(va_list arg);
-void _int(va_list arg);
-void _float(va_list arg);
-void print_all(const char *const format, ...);
+void print_int(va_list);
+void print_float(va_list);
+void print_char(va_list);
+void print_str(va_list);
 
 /**
- * _char - print str
- * @arg: list
- * Return: NULL
- */
-void _char(va_list arg)
-{
-	char lt;
-
-	lt = va_arg(arg, int);
-	printf("%c", lt);
-}
-
-/**
- * _string - Prints a string.
- * @arg: list
- * Return: NULL
- */
-void _string(va_list arg)
-{
-	char *str;
-
-	str = va_arg(arg, char *);
-
-	if (str == NULL)
-	{
-		printf("(nil)");
-		return;
-	}
-
-	printf("%s", str);
-}
-
-/**
- * _int - print int
- * @arg: list
- * Return: NULL
- */
-void _int(va_list arg)
-{
-	int nb;
-
-	nb = va_arg(arg, int);
-	printf("%d", nb);
-}
-
-/**
- * _float - Prints a float.
- * @arg: list
- * Return: NULL
- */
-void _float(va_list arg)
-{
-	float nb;
-
-	nb = va_arg(arg, double);
-	printf("%f", nb);
-}
-
-/**
- * print_all - print all
- * @format: const char
- * @...: var
- * Return: NULL
+ * print_all - Print all type of given argu
+ *
+ * @format: sting that containt the type of the given argu
+ *
+ * Return: ANything, cause void function.
  */
 void print_all(const char *const format, ...)
 {
-	va_list arg;
-	int i = 0, j = 0;
-	char *k = "";
-	printer_t f[] = {
-		{"c", _char},
-		{"i", _int},
-		{"f", _float},
-		{"s", _string}};
+	unsigned int i, j;
+	char *separator = "";
 
-	va_start(arg, format);
-	while (format && (*(format + i)))
+	va_list print;
+
+	format_str p[] = {
+		{"c", print_char},
+		{"s", print_str},
+		{"i", print_int},
+		{"f", print_float},
+		{NULL, NULL}};
+
+	va_start(print, format);
+	i = 0;
+	while (format != NULL && format[i])
 	{
 		j = 0;
-		while (j < 4 && (*(format + i) != *(f[j].symbol)))
-			j++;
-		if (j < 4)
+		while (p[j].type)
 		{
-			printf("%s", k);
-			f[j].print(arg);
-			k = ", ";
+			if (*p[j].type == format[i])
+			{
+				printf("%s", separator);
+				separator = ", ";
+				p[j].f(print);
+				break;
+			}
+			j++;
 		}
 		i++;
 	}
-	printf("\n");
-	va_end(arg);
+	va_end(print);
+	putchar('\n');
+}
+
+/**
+ * print_int - Print an int
+ *
+ * @print: The argu to print
+ *
+ * Return: Anything, cause void function
+ */
+void print_int(va_list print)
+{
+	printf("%d", va_arg(print, int));
+}
+
+/**
+ * print_float - Print a float
+ *
+ * @print: The argu to print
+ *
+ * Return: Anything, cause void function
+ */
+void print_float(va_list print)
+{
+	printf("%f", va_arg(print, double));
+}
+
+/**
+ * print_char - Print a char
+ *
+ * @print: The argu to print
+ *
+ * Return: Anything, cause void function
+ */
+void print_char(va_list print)
+{
+	printf("%c", va_arg(print, int));
+}
+
+/**
+ * print_str - Print a str
+ *
+ * @print: The argu to print
+ *
+ * Return: Anything, cause void function
+ */
+void print_str(va_list print)
+{
+	char *str = va_arg(print, char *);
+
+	if (str == NULL)
+		str = "(nil)";
+	printf("%s", str);
 }
