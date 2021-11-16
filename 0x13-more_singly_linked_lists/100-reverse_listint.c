@@ -3,7 +3,7 @@
 /**
  * reverse_listint - revesre a list
  * @head: list
- * Return: lsit reversed
+ * Return: list reversed
  */
 
 listint_t *reverse_listint(listint_t **head)
