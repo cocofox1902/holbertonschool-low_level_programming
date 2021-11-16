@@ -8,13 +8,13 @@
 
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t number_of_nodes = 0;
+	size_t node_nb = 0;
 	long int looptest = 0;
 
 	while (head)
 	{
 		looptest = head - head->next;
-		number_of_nodes++;
+		node_nb++;
 		printf("[%p] %d\n", (void *)head, head->n);
 
 		if (looptest > 0)
@@ -28,5 +28,5 @@ size_t print_listint_safe(const listint_t *head)
 		}
 	}
 
-	return (number_of_nodes);
+	return (node_nb);
 }
