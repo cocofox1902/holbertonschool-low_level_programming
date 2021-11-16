@@ -9,13 +9,13 @@
 size_t print_listint_safe(const listint_t *head)
 {
 	size_t node_nb = 0;
-	long int looptest = 0;
+	int looptest = 0;
 
 	while (head)
 	{
 		looptest = head - head->next;
-		node_nb++;
 		printf("[%p] %d\n", (void *)head, head->n);
+		node_nb++;
 
 		if (looptest > 0)
 		{
@@ -28,5 +28,6 @@ size_t print_listint_safe(const listint_t *head)
 		}
 	}
 
+	printf("%ld \n", node_nb);
 	return (node_nb);
 }
