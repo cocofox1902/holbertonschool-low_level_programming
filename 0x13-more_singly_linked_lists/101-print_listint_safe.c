@@ -9,19 +9,19 @@
 size_t print_listint_safe(const listint_t *head)
 {
 	size_t node_nb = 0;
-	long int looptest = 0;
+	long int looptest;
 
 	while (head)
 	{
 		looptest = head - head->next;
-		printf("[%p] %d\n", (void *)head, head->n);
 		node_nb++;
+		printf("[%p] %d\n", (void *)head, head->n);
 
 		if (looptest > 0)
 		{
 			head = head->next;
 		}
-		else if (head != NULL)
+		else
 		{
 			printf("-> [%p] %d\n", (void *)head->next, head->next->n);
 			break;
