@@ -8,31 +8,16 @@
 
 listint_t *reverse_listint(listint_t **head)
 {
-	listint_t *temp, *end = *head;
-	unsigned int n = 0;
+	listint_t *before = NULL, *after = NULL;
 
-	if (end == NULL)
-		return (-1);
-
-	if (index == 0)
+	while (*head)
 	{
-		*head = (*head)->next;
-		free(end);
-		return (1);
+		after = (*head)->next;
+		(*head)->next = before;
+		before = *head;
+		*head = after;
 	}
 
-	while (n < (index - 1))
-	{
-		if (end->next == NULL)
-			return (-1);
-
-		end = end->next;
-		n++;
-	}
-
-	temp = end->next;
-	end->next = temp->next;
-
-	free(temp);
-	return (1);
+	*head = before;
+	return (*head);
 }
