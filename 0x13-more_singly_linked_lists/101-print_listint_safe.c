@@ -11,10 +11,7 @@ size_t print_listint_safe(const listint_t *head)
 	size_t node_nb = 0;
 	long int looptest;
 
-	if (head == NULL)
-		return (0);
-
-	while (head)
+	while (head && head->next)
 	{
 		looptest = head - head->next;
 		node_nb++;
