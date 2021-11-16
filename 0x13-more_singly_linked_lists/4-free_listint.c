@@ -1,10 +1,9 @@
 #include "lists.h"
 
 /**
- * add_nodeint_end - add a node at the end of a list
+ * free_listint - free the list
  * @head: list
- * @n: constant
- * Return: list with new node at new node
+ * Return: list free
  */
 
 void free_listint(listint_t *head)
