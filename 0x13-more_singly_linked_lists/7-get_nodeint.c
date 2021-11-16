@@ -3,7 +3,7 @@
 /**
  * get_nodeint_at_index - addition node
  * @head: list
- * @n: unsigned int
+ * @index: unsigned int
  * Return: total node
  */
 
