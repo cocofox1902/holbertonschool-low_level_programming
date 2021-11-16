@@ -1,7 +1,7 @@
 #include "lists.h"
 
 /**
- * insert_noint_at_index - insert a end no
+ * insert_nodeint_at_index - insert a end no
  * @head: list
  * @idx: unsigned int
  * @n: int
