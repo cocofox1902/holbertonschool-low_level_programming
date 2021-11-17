@@ -25,7 +25,7 @@ size_t print_listint_safe(const listint_t *head)
 }
 
 /**
- * teast_same - infinit loop test
+ * test_same - infinit loop test
  * @head: const
  * @tested: const
  * @i: size_t
