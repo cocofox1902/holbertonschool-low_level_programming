@@ -8,25 +8,42 @@
 
 size_t print_listint_safe(const listint_t *head)
 {
-	size_t node_nb = 0;
-	long int looptest;
+	size_t nb;
+	const listint_t *temp;
 
-	while (head && head->next)
+	temp = head;
+	for (nb = 0; head && test_same(temp, head, nb); nb++)
 	{
-		looptest = head - head->next;
-		node_nb++;
 		printf("[%p] %d\n", (void *)head, head->n);
-
-		if (looptest > 0)
-		{
-			head = head->next;
-		}
-		else
-		{
-			printf("-> [%p] %d\n", (void *)head->next, head->next->n);
-			break;
-		}
+		head = head->next;
 	}
 
-	return (node_nb);
+	if (head)
+		printf("-> [%p] %d\n", (void *)head, head->n);
+
+	return (nb);
+}
+
+/**
+ * teast_same - infinit loop test
+ * @head: const
+ * @tested: const
+ * @i: size_t
+ * Return: 0 or 1
+ */
+
+int test_same(const listint_t *head, const listint_t *tested, size_t i)
+{
+	size_t numb = 0;
+
+	while (head != tested)
+	{
+		head = head->next;
+		numb++;
+	}
+
+	if (numb == i)
+		return (1);
+
+	return (0);
 }
