@@ -9,7 +9,10 @@
 unsigned int binary_to_uint(const char *b)
 {
 	unsigned int bin = 0, times = 1;
-	int lenght;
+	int lenght = 0;
+
+	if (b[lenght] == '\0')
+		return (0);
 
 	for (lenght = 0; b[lenght];)
 		lenght++;
