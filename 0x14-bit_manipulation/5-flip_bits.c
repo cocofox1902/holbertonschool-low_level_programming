@@ -3,7 +3,7 @@
 /**
  * set_bit - flip bits
  * @n: unsigned long int
- * @index: unsigned long int
+ * @m: unsigned long int
  * Return: bits flip
  */
 
