@@ -2,7 +2,7 @@
 
 /**
  * print_binary - convert into binary
- * @b: coonstant
+ * @n: coonstant
  * Return: binary
  */
 
