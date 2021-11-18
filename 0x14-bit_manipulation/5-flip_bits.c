@@ -1,7 +1,7 @@
 #include "main.h"
 
 /**
- * set_bit - flip bits
+ * flip_bits - flip bits
  * @n: unsigned long int
  * @m: unsigned long int
  * Return: bits flip
