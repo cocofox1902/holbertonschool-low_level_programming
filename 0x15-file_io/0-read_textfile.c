@@ -3,7 +3,7 @@
 /**
  * read_textfile - read and print file
  * @filename: constant
- * @letter: letter
+ * @letters: letter
  * Return: file
  */
 
@@ -14,10 +14,10 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	ssize_t b;
 	ssize_t c;
 
-	buf = malloc(sizeof(char) * letters);
-
 	if (filename == NULL)
 		return (0);
+
+	buf = malloc(sizeof(char) * letters);
 
 	if (buf == NULL)
 		return (0);
