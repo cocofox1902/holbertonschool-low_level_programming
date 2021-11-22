@@ -45,8 +45,7 @@ int main(int argc, char *argv[])
 	copy_that = open(argv[1], O_RDONLY);
 	read_ = read(copy_that, buf, 1024);
 	coppied = open(argv[2], O_CREAT | O_WRONLY | O_TRUNC, 0664);
-	do
-	{
+	do {
 		if (copy_that == -1 || read_ == -1)
 		{
 			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
@@ -60,6 +59,8 @@ int main(int argc, char *argv[])
 			free(buf);
 			exit(99);
 		}
+		read_ = read(copy_that, buf, 1024);
+		coppied = open(argv[2], O_WRONLY | O_APPEND);
 	} while (read_ > 0);
 	free(buf);
 	close_(copy_that);
