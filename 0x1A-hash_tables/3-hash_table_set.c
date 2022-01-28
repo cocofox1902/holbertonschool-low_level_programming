@@ -1,13 +1,12 @@
 #include "hash_tables.h"
 
 /**
- * key_index - gives you the index of a key
- *
- * @ht: hash table you want to add or update the key/value to
+ * hash_table_set - add element to the table(S/O: bdbaraban)
+ * @ht: hash table
  * @key: the key
- * @size: value associated with the key
+ * @value: the size
  *
- * Return: 1 if it succeeded, 0 otherwise
+ * Return: 1 or 0
  */
 
 int hash_table_set(hash_table_t *ht, const char *key, const char *value)

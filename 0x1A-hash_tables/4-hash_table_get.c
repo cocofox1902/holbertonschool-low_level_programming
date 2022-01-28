@@ -1,8 +1,11 @@
 #include "hash_tables.h"
 
 /**
- * @brief 
- * 
+ * hash_table_get - retrieves a value
+ * @ht: hash table
+ * @key: the key
+ *
+ * Return: gen and size
  */
 
 char *hash_table_get(const hash_table_t *ht, const char *key)
@@ -17,6 +20,7 @@ char *hash_table_get(const hash_table_t *ht, const char *key)
 		return (NULL);
 
 	i = key_index((const unsigned char *)key, ht->size);
+
 	if (i >= ht->size)
 		return (NULL);
 

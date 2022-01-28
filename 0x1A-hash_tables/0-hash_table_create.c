@@ -4,8 +4,10 @@
 #include <stdio.h>
 
 /**
- * @brief 
- * 
+ * hash_table_create - create an hash table
+ * @size: size of the table
+ *
+ * Return: table
  */
 
 hash_table_t *hash_table_create(unsigned long int size)

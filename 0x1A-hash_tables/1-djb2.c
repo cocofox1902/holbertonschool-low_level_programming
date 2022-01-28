@@ -1,10 +1,10 @@
 #include "hash_tables.h"
 
 /**
- * @brief 
- * 
- * @param str 
- * @return unsigned long int 
+ * hash_djb2 - key gen
+ * @str: string to securise
+ *
+ * Return: string securised
  */
 
 unsigned long int hash_djb2(const unsigned char *str)
