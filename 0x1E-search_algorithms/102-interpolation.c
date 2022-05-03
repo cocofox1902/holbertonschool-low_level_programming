@@ -34,9 +34,7 @@ int interpolation_search(int *array, size_t size, int value)
 			printf(" = [%d]\n", array[before]);
 		}
 		if (array[before] == value)
-		{
 			return ((int)before);
-		}
 		if (array[before] < value)
 		{
 			little = before + 1;
@@ -46,9 +44,7 @@ int interpolation_search(int *array, size_t size, int value)
 			big = before - 1;
 		}
 		if (little == big)
-		{
 			break;
-		}
 	}
 
 	return (-1);
