@@ -1,65 +1,57 @@
 #include "search_algos.h"
 
 /**
- * advanced_binary - advenced binary
- * @array: array to search
- * @size: size of array
+ * advanced_binary - advanced binary
+ * in a sorted array of integers
+ *
+ * @array: pointer to the first element of the array to search in
+ * @size: number of elements in array
  * @value: value to search for
  *
- * Return: index of value or -1 if not found
+ * Return:
+ *	first index where value is located
+ *	-1 otherwise
  */
 
 int advanced_binary(int *array, size_t size, int value)
 {
-	if (array == NULL)
+	if (size == 0)
 		return (-1);
 
-	return (advanced_binary_second(array, value, 0, (int)size - 1));
+	return (advanced_binary_search(array, 0, size - 1, value));
 }
 
 /**
- * advanced_binary_second - binary search
- * @array: array to search
+ * advanced_binary_search - advanced binary search
+ * in a sorted array of integers recursively
+ *
+ * @array: pointer to the first element of the array to search in
+ * @left: left position of the array
+ * @right: right position of the array
  * @value: value to search for
- * @start: start index
- * @end: end index
- * Return: index of value or -1 if not found
+ *
+ * Return:
+ *	first index where value is located
+ *	-1 otherwise
  */
 
-int advanced_binary_second(int *array, int value, int start, int end)
+int advanced_binary_search(int *array, size_t left, size_t right, int value)
 {
-	int index, middle;
-	int index1 = end;
-	int index2 = start;
+	size_t mid = left + (right - left) / 2;
+	size_t i = 0;
 
-	if (array == NULL)
+	/* print the array */
+	printf("Searching in array: ");
+	for (i = 0; i < right - left; i++)
+		printf("%d, ", array[i + left]);
+	printf("%d\n", array[i + left]);
+
+	if (array[mid] == value && array[mid - 1] != value)
+		return (mid);
+	else if (right - left == 0)
 		return (-1);
+	else if (array[mid] >= value)
+		return (advanced_binary_search(array, left, mid, value));
 
-	while (index2 <= index1)
-	{
-		printf("Searching in array:");
-		for (index = index2; index <= index1; index++)
-		{
-			printf(" %i", array[index]);
-			if (index != index1)
-				printf(",");
-		}
-		printf("\n");
-
-		middle = (int)((index2 + index1) / 2);
-
-		if (value > array[middle])
-			index2 = middle + 1;
-		else if (value < array[middle])
-			index1 = middle - 1;
-		else
-		{
-			if (value == array[middle - 1])
-				return (advanced_binary_second(array, value, index2, middle));
-			else
-				return (middle);
-		}
-	}
-
-	return (-1);
+	return (advanced_binary_search(array, mid + 1, right, value));
 }
