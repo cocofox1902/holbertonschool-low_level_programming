@@ -2,81 +2,84 @@
 
 /**
  * exponential_search - exponential search
- * @array: array to search
- * @size: size of array
- * @value: value to search for
  *
- * Return: index of value, -1 if not found
+ * the exponential search algorithm
+ * @array: array to search the value in
+ * @size: size of the array
+ * @value: value to look for
+ *
+ * Return: index or 1
  */
 
 int exponential_search(int *array, size_t size, int value)
 {
-	int jump = 1;
+	size_t first, last, index;
 
-	if (array == NULL || (int)size == 0)
+	if (!array || size == 0)
 		return (-1);
 
-	while (array[jump] < value && jump < (int)size)
+	last = 1;
+	first = 1;
+	while (last < size)
 	{
-		printf("Value checked array[%i] = [%i]\n", jump, array[jump]);
-		jump *= 2;
+		if (value < array[last])
+			break;
+		printf("Value checked array[%lu] = [%d]\n", last, array[last]);
+		first = last;
+		last = last * 2;
 	}
-
-	if ((int)size > jump)
-	{
-		return (exponential_search_second(array, value, jump / 2, jump));
-	}
-	else
-	{
-		return (exponential_search_second(array, value, jump / 2, (int)size - 1));
-	}
+	index = last < size - 1 ? last : size - 1;
+	printf("Value found between indexes [%lu] and [%lu]\n", first, index);
+	return (help_binary(array, value, last / 2, index));
 }
 
 /**
  * exponential_search_second - exponential search second
- * @array: array to search
- * @value: value to search for
- * @little: index of first element
- * @big: index of last element
  *
- * Return: index of value, -1 if not found
+ * @array: array to search the value in
+ * @value: value to look for
+ * @lo: index of the low bound
+ * @hi: index of the high bound
+ *
+ * Return: index or 1
  */
 
-int exponential_search_second(int *array, int value, int little, int big)
+int exponential_search_second(int *array, int value, size_t lo, size_t hi)
 {
-	int index, mid;
-	int index1 = big;
-	int index2 = little;
+	size_t mid;
 
-	if (array == NULL)
+	array_print(array, lo, hi);
+	if (hi == lo && array[lo] != value)
 		return (-1);
 
-	printf("Value found between indexes [%i] and [%i]\n", little, big);
-	while (index2 <= index1)
-	{
-		printf("Searching in array:");
-		for (index = index2; index <= index1; index++)
-		{
-			printf(" %i", array[index]);
-			if (index != index1)
-				printf(",");
-		}
-		printf("\n");
-		mid = (int)((index2 + index1) / 2);
-
-		if (value > array[mid])
-		{
-			index2 = mid + 1;
-		}
-		else if (value < array[mid])
-		{
-			index1 = mid - 1;
-		}
-		else
-		{
-			return (mid);
-		}
-	}
-
+	mid = ((hi - lo) / 2) + lo;
+	if (array[mid] == value)
+		return (mid);
+	if (array[mid] > value)
+		return (help_binary(array, value, lo, mid - 1));
+	if (array[mid] < value)
+		return (help_binary(array, value, mid + 1, hi));
 	return (-1);
+}
+
+/**
+ * exponential_search_third - exponential search third
+ * @array: array to print
+ * @lo: index of the low bound
+ * @hi: index of the high bound
+ * Return: void
+ */
+
+void exponential_search_third(int *array, size_t lo, size_t hi)
+{
+	size_t index;
+
+	printf("Searching in array: ");
+	for (index = lo; index <= hi; index++)
+	{
+		printf("%d", array[index]);
+		if (index < hi)
+			printf(", ");
+	}
+	printf("\n");
 }
